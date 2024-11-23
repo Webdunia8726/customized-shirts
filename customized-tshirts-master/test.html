@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owl Carousel Continuous Right and Left Slide</title>
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        .slider-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .owl-item {
+            transition: transform 0.5s ease;  /* Smooth transition for sliding */
+        }
+
+        .owl-stage {
+            display: flex;
+        }
+
+        /* Style for the second slider to differentiate */
+        .second-slider {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- First Carousel Container (Continuous Right Slide) -->
+    <div class="owl-carousel owl-theme">
+        <div><img src="https://via.placeholder.com/400x300?text=Image+1" class="slider-img" alt="Image 1"></div>
+        <div><img src="https://via.placeholder.com/400x300?text=Image+2" class="slider-img" alt="Image 2"></div>
+        <div><img src="https://via.placeholder.com/400x300?text=Image+3" class="slider-img" alt="Image 3"></div>
+        <div><img src="https://via.placeholder.com/400x300?text=Image+4" class="slider-img" alt="Image 4"></div>
+        <div><img src="https://via.placeholder.com/400x300?text=Image+5" class="slider-img" alt="Image 5"></div>
+        <div><img src="https://via.placeholder.com/400x300?text=Image+6" class="slider-img" alt="Image 6"></div>
+    </div>
+
+    <!-- Second Carousel Container (Continuous Left Slide) -->
+    <div class="owl-carousel owl-theme second-slider">
+        <div><img src="https://via.placeholder.com/400x300?text=Slide+1" class="slider-img" alt="Slide 1"></div>
+        <div><img src="https://via.placeholder.com/400x300?text=Slide+2" class="slider-img" alt="Slide 2"></div>
+        <div><img src="https://via.placeholder.com/400x300?text=Slide+3" class="slider-img" alt="Slide 3"></div>
+        <div><img src="https://via.placeholder.com/400x300?text=Slide+4" class="slider-img" alt="Slide 4"></div>
+        <div><img src="https://via.placeholder.com/400x300?text=Slide+5" class="slider-img" alt="Slide 5"></div>
+        <div><img src="https://via.placeholder.com/400x300?text=Slide+6" class="slider-img" alt="Slide 6"></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Initialize Owl Carousel -->
+    <script>
+        $(document).ready(function(){
+            // First Carousel (Continuous Right Slide)
+            $('.owl-carousel').eq(0).owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 1000,
+                autoplaySpeed: 1000,
+                slideTransition: 'linear',
+                autoplayHoverPause: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+
+            // Second Carousel (Continuous Left Slide)
+            $('.owl-carousel').eq(1).owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 1000,  // 1 second for each transition
+                autoplaySpeed: 1000,     // Speed of each slide transition
+                slideTransition: 'linear',
+                autoplayHoverPause: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
