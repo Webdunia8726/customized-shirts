@@ -955,11 +955,13 @@ h2{
           width: 100%;
         }
     
-        .carousel-caption h4,
-        .carousel-caption h3 {
+        .carousel-caption h4
+       {
           font-size: 1.2rem; /* Smaller font size for mobile */
         }
-    
+        .carousel-caption h3{
+            font-size: 2rem;
+        }
         .carousel-caption button {
           padding: 0.5rem 1rem;
           font-size: 0.9rem;
